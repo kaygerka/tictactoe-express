@@ -1,0 +1,23 @@
+
+- Create a signup 
+- Create a `/signup` HTTP POST request handler in `backend/index.jsx`
+  - Read a username and password from the request body (and any other data you might have users sign up with).
+  - Respond with an error message and 409 Conflict status code if a user with the same username already exists in `user_data`.
+  - Save the new user's data to `user_data`. Consider using the username as the key.
+  - Respond with any user information and a 200 status code upon success.
+- Make a HTTP POST request to `localhost:3000/signup` from `frontend/src/pages/Signup.jsx` 
+  - Make the request upon form submission.
+  - Upon success, set the user state passed by GlobalContext with the user information returned by the HTTP request. 
+  - Upon success, navigate the user to the `/game` page upon success. Use React Router's useNavigate hook to accomplish this.
+  - Upon failure, throw an alert containing an error message.
+
+- Create a login form
+- Create a `/login` HTTP POST request handler in `backend/index.jsx`
+  - Take a username and password from the request body (and any other data you might have users log in with).
+  - Respond with user data and a 200 status code if a matching user is found in `user_data`.
+  - Respond with an error message and 401 Unauthorized status code if no user with that username and password combination exists.
+- Make a HTTP POST request to `localhost:3000/login` from `frontend/src/pages/Login.jsx` 
+  - Make the request upon form submission.
+  - Upon success, set the user state passed by GlobalContext with the user information returned by the HTTP request. 
+  - Upon success, navigate the user to the `/game` page upon success.
+  - Upon failure, throw an alert containing an error message.
